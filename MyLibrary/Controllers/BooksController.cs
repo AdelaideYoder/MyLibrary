@@ -68,8 +68,11 @@ namespace MyLibrary.Controllers
                 await _context.SaveChangesAsync();
                 return RedirectToAction(nameof(Index));
             }
-            ViewData["LibraryId"] = new SelectList(_context.Library, "LibraryId", "LibraryId", book.LibraryId);
-            return View(book);
+            //ViewData["LibraryId"] = new SelectList(_context.Library, "LibraryId", "LibraryId", book.LibraryId);
+
+            BookCreateViewModel bookCreateViewModel = new BookCreateViewModel(_context);
+            bookCreateViewModel.Book = book;
+            return View(bookCreateViewModel);
         }
 
         // GET: Books/Edit/5
@@ -124,8 +127,10 @@ namespace MyLibrary.Controllers
                 }
                 return RedirectToAction(nameof(Index));
             }
-            ViewData["LibraryId"] = new SelectList(_context.Library, "LibraryId", "LibraryId", book.LibraryId);
-            return View(book);
+            //ViewData["LibraryId"] = new SelectList(_context.Library, "LibraryId", "LibraryId", book.LibraryId);
+            BookEditViewModel bookEditViewModel = new BookEditViewModel(_context);
+            bookEditViewModel.Book = book;
+            return View(bookEditViewModel);
         }
 
         // GET: Books/Delete/5
