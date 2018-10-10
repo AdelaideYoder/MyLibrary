@@ -49,8 +49,10 @@ namespace MyLibrary.Controllers
         // GET: Books/Create
         public IActionResult Create()
         {
-            ViewData["LibraryId"] = new SelectList(_context.Library, "LibraryId", "Name");
-            return View();
+            //ViewData["LibraryId"] = new SelectList(_context.Library, "LibraryId", "Name");
+            BookCreateViewModel bookCreateViewModel = new BookCreateViewModel(_context);
+            return View(bookCreateViewModel);
+
         }
 
         // POST: Books/Create
