@@ -8,22 +8,19 @@ using System.Threading.Tasks;
 
 namespace MyLibrary.ViewModels
 {
-    public class BookEditViewModel
+    public class BookCreateViewModel
     {
         public Book Book { get; set; }
 
         public List<SelectListItem> Libraries { get; set; }
 
-        //Used this in the Get Method
-        public BookEditViewModel(ApplicationDbContext context)
+        public BookCreateViewModel(ApplicationDbContext context)
         {
             Libraries = context.Library.Select(library =>
             new SelectListItem { Text = library.Name, Value = library.LibraryId.ToString() }).ToList();
         }
 
-        //Created this constructor to re-display the form with submitted values already populated in form
-        //Used this in the POST method for Edit
-        public BookEditViewModel(ApplicationDbContext context, Book book)
+        public BookCreateViewModel(ApplicationDbContext context, Book book)
         {
             Libraries = context.Library.Select(library =>
             new SelectListItem { Text = library.Name, Value = library.LibraryId.ToString() }).ToList();
