@@ -7,6 +7,7 @@ using Microsoft.AspNetCore.Mvc.Rendering;
 using Microsoft.EntityFrameworkCore;
 using MyLibrary.Data;
 using MyLibrary.Models;
+using MyLibrary.ViewModels;
 
 namespace MyLibrary.Controllers
 {
@@ -46,7 +47,9 @@ namespace MyLibrary.Controllers
         // GET: Libraries/Create
         public IActionResult Create()
         {
-            return View();
+            LibraryCreateViewModel libraryCreateViewModel = new LibraryCreateViewModel();
+            return View(libraryCreateViewModel);
+
         }
 
         // POST: Libraries/Create
@@ -62,7 +65,10 @@ namespace MyLibrary.Controllers
                 await _context.SaveChangesAsync();
                 return RedirectToAction(nameof(Index));
             }
-            return View(library);
+            //return View(library);
+            LibraryCreateViewModel libraryCreateViewModel = new LibraryCreateViewModel();
+            libraryCreateViewModel.Library = library;
+            return View(libraryCreateViewModel);
         }
 
         // GET: Libraries/Edit/5
