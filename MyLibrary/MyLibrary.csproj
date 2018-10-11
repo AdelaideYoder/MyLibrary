@@ -7,6 +7,12 @@
   <ItemGroup>
     <Compile Remove="Migrations\20181010151506_Initial.cs" />
     <Compile Remove="Migrations\20181010151506_Initial.Designer.cs" />
+    <Compile Remove="Migrations\20181011161620_Added-patron.cs" />
+    <Compile Remove="Migrations\20181011161620_Added-patron.Designer.cs" />
+    <Compile Remove="Migrations\20181011162037_Added-patron-again.cs" />
+    <Compile Remove="Migrations\20181011162037_Added-patron-again.Designer.cs" />
+    <Compile Remove="Migrations\20181011162552_Added-patron-info-to-book-model.cs" />
+    <Compile Remove="Migrations\20181011162552_Added-patron-info-to-book-model.Designer.cs" />
   </ItemGroup>
 
   <ItemGroup>
