@@ -26,7 +26,7 @@ namespace MyLibrary.Models
         public Library Library { get; set; }
 
         [Display(Name = "Patron")]
-        public int PatronId { get; set; }
+        public int? PatronId { get; set; }
 
         public Patron Patron { get; set; }
 
