@@ -20,6 +20,8 @@ namespace MyLibrary.ViewModels
             new SelectListItem { Text = library.Name, Value = library.LibraryId.ToString() }).ToList();
         }
 
+        //Created this constructor to re-display the form with submitted values already populated in form
+        //Used this in the POST method for Create
         public BookCreateViewModel(ApplicationDbContext context, Book book)
         {
             Libraries = context.Library.Select(library =>
