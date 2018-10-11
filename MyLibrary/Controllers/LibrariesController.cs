@@ -84,7 +84,9 @@ namespace MyLibrary.Controllers
             {
                 return NotFound();
             }
-            return View(library);
+            LibraryEditViewModel libraryEditViewModel = new LibraryEditViewModel();
+            libraryEditViewModel.Library = library;
+            return View(libraryEditViewModel);
         }
 
         // POST: Libraries/Edit/5
@@ -119,7 +121,9 @@ namespace MyLibrary.Controllers
                 }
                 return RedirectToAction(nameof(Index));
             }
-            return View(library);
+            LibraryEditViewModel libraryEditViewModel = new LibraryEditViewModel();
+            libraryEditViewModel.Library = library;
+            return View(libraryEditViewModel);
         }
 
         // GET: Libraries/Delete/5
