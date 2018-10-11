@@ -1,4 +1,4 @@
-﻿@model MyLibrary.Models.Library
+﻿@model MyLibrary.ViewModels.LibraryCreateViewModel
 
 @{
     ViewData["Title"] = "Create";
@@ -13,24 +13,24 @@
         <form asp-action="Create">
             <div asp-validation-summary="ModelOnly" class="text-danger"></div>
             <div class="form-group">
-                <label asp-for="Name" class="control-label"></label>
-                <input asp-for="Name" class="form-control" />
-                <span asp-validation-for="Name" class="text-danger"></span>
+                <label asp-for="Library.Name" class="control-label"></label>
+                <input asp-for="Library.Name" class="form-control" />
+                <span asp-validation-for="Library.Name" class="text-danger"></span>
             </div>
             <div class="form-group">
-                <label asp-for="Address" class="control-label"></label>
-                <input asp-for="Address" class="form-control" />
-                <span asp-validation-for="Address" class="text-danger"></span>
+                <label asp-for="Library.Address" class="control-label"></label>
+                <input asp-for="Library.Address" class="form-control" />
+                <span asp-validation-for="Library.Address" class="text-danger"></span>
             </div>
             <div class="form-group">
-                <label asp-for="OpenHour" class="control-label"></label>
-                <input asp-for="OpenHour" class="form-control" />
-                <span asp-validation-for="OpenHour" class="text-danger"></span>
+                <label asp-for="Library.OpenHour" class="control-label"></label>
+                <input asp-for="Library.OpenHour" class="form-control" />
+                <span asp-validation-for="Library.OpenHour" class="text-danger"></span>
             </div>
             <div class="form-group">
-                <label asp-for="CloseHour" class="control-label"></label>
-                <input asp-for="CloseHour" class="form-control" />
-                <span asp-validation-for="CloseHour" class="text-danger"></span>
+                <label asp-for="Library.CloseHour" class="control-label"></label>
+                <input asp-for="Library.CloseHour" class="form-control" />
+                <span asp-validation-for="Library.CloseHour" class="text-danger"></span>
             </div>
             <div class="form-group">
                 <input type="submit" value="Create" class="btn btn-default" />
